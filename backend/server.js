@@ -43,7 +43,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 //dot config
 dotenv.config();
-
+mongoose.set('strictQuery', false);
 // виклик функції з асинхронним підключенням до бази даних
 const startServer = async () => {
     try {
