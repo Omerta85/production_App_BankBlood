@@ -74,7 +74,7 @@ const startServer = async () => {
         app.listen(PORT, () => {
             console.log(
                 `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
-                    .bgBlue.white
+
             );
         });
     } catch (error) {
