@@ -37,7 +37,7 @@
 // });
 const express = require("express");
 const dotenv = require("dotenv");
-const colors = require("colors");
+
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
@@ -58,7 +58,10 @@ const startServer = async () => {
         app.use(express.json());
         app.use(cors());
         app.use(morgan("dev"));
-
+        //api
+        app.get("/", (req, res) => {
+            res.send("Server is running");
+        });
         //routes
         // 1 test route
         app.use("/api/v1/test", require("./routes/testRoutes"));
