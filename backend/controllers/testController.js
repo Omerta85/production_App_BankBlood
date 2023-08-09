@@ -1,7 +1,7 @@
-const testController =  (req, res) => {
+const testController = (req, res) => {
     res.status(200).send({
-       message: "Вітаю користувач",
-       success: true,
+        message: "Welcome user",
+        success: true,
     });
 };
 
