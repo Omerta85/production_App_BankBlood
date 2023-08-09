@@ -12,7 +12,7 @@ const Donation = () => {
         try {
             const { data } = await API.post("/inventory/get-inventory-hospital", {
                 filters: {
-                    inventoryType: "вхід",
+                    inventoryType: "in",
                     donor: user?._id,
                 },
             });

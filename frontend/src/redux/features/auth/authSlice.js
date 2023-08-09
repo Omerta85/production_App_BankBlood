@@ -1,63 +1,63 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {getCurrentUser, userLogin, userRegister} from "./authActions";
+import { createSlice } from "@reduxjs/toolkit";
+import { getCurrentUser, userLogin, userRegister } from "./authActions";
 
-const token = localStorage.getItem('token')
-    ? localStorage.getItem('token')
+const token = localStorage.getItem("token")
+    ? localStorage.getItem("token")
     : null;
 
 const initialState = {
-    loading:false,
-    user:null,
+    loading: false,
+    user: null,
     token,
-    error:null
-}
+    error: null,
+};
 
 const authSlice = createSlice({
-    name:'auth',
+    name: "auth",
     initialState: initialState,
-    reducers:{},
-    extraReducers:(builder) => {
-        //login user
+    reducers: {},
+    extraReducers: (builder) => {
+        // login user
         builder.addCase(userLogin.pending, (state) => {
-            state.loading=true;
-            state.error = null
-        })
-        builder.addCase(userLogin.fulfilled, (state, {payload}) => {
+            state.loading = true;
+            state.error = null;
+        });
+        builder.addCase(userLogin.fulfilled, (state, { payload }) => {
             state.loading = false;
             state.user = payload.user;
-            state.token = payload.token
-        })
-        builder.addCase(userLogin.rejected, (state,{payload}) => {
+            state.token = payload.token;
+        });
+        builder.addCase(userLogin.rejected, (state, { payload }) => {
             state.loading = false;
             state.error = payload;
         });
-        //register user
+        // REGISTER user
         builder.addCase(userRegister.pending, (state) => {
-            state.loading=true;
-            state.error = null
-        })
-        builder.addCase(userRegister.fulfilled, (state, {payload}) => {
+            state.loading = true;
+            state.error = null;
+        });
+        builder.addCase(userRegister.fulfilled, (state, { payload }) => {
             state.loading = false;
             state.user = payload.user;
-        })
-        builder.addCase(userRegister.rejected, (state,{payload}) => {
+        });
+        builder.addCase(userRegister.rejected, (state, { payload }) => {
             state.loading = false;
             state.error = payload;
         });
-        //current user
+        // CURRENT user
         builder.addCase(getCurrentUser.pending, (state) => {
-            state.loading=true;
-            state.error = null
-        })
-        builder.addCase(getCurrentUser.fulfilled, (state, {payload}) => {
+            state.loading = true;
+            state.error = null;
+        });
+        builder.addCase(getCurrentUser.fulfilled, (state, { payload }) => {
             state.loading = false;
             state.user = payload.user;
-        })
-        builder.addCase(getCurrentUser.rejected, (state,{payload}) => {
+        });
+        builder.addCase(getCurrentUser.rejected, (state, { payload }) => {
             state.loading = false;
             state.error = payload;
         });
     },
 });
 
-export default authSlice
+export {authSlice};
