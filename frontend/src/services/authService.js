@@ -37,6 +37,11 @@ export const handleRegister = async (
         const state = store.getState(); // Get the current state from the Redux store
         const users = state.auth.user; // Assuming you have a "users" property in your Redux state
 
+        if (users === null) {
+            // Handle the case where user data is not loaded yet
+            return toast("User data is still loading. Please try again.");
+        }
+
         const existingUser = users.find((user) => user.email === email);
         if (existingUser) {
             return toast("This email is already registered");
