@@ -1,12 +1,13 @@
-import {getCurrentUser, userLogin, userRegister} from "../redux/features/auth/authActions";
-import {store} from "../redux/store";
-import {toast} from "react-toastify";
+import { getCurrentUser, userLogin, userRegister } from "../redux/features/auth/authActions";
+import { store } from "../redux/store";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const handleLogin = (e, email, password, role) => {
     e.preventDefault();
     try {
-        if ( !role || !email || !password) {
-            return toast("Please Pride All Fields");
+        if (!role || !email || !password) {
+            toast.error("Please Provide All Fields");
         }
         store.dispatch(userLogin({ email, password }));
     } catch (error) {
@@ -28,23 +29,24 @@ export const handleRegister = async (
 ) => {
     e.preventDefault();
     try {
-        if (!role || !email || !password || !phone || !address ||!website || (!name && !organisationName && !hospitalName)) {
-            return toast("Please Pride All Fields");
+        if (!role || !email || !password || !phone || !address || !website || (!name && !organisationName && !hospitalName)) {
+            toast.error("Please Provide All Fields");
         }
-        // Dispatch getCurrentUser action to ensure user data is loaded
+
         await store.dispatch(getCurrentUser());
-        // Check if the email is already registered
-        const state = store.getState(); // Get the current state from the Redux store
-        const users = state.auth; // Assuming you have a "users" property in your Redux state
+
+        const state = store.getState();
+        const users = state.auth.user;
 
         if (users === null) {
-            // Handle the case where user data is not loaded yet
-            return toast("This email is already registered");
+            toast.error("User data is still loading. Please try again.");
+            return;
         }
 
         const existingUser = users.find((user) => user.email === email);
         if (existingUser) {
-            return toast("This email is already registered");
+            toast.error("This email is already registered");
+            return;
         }
 
         await store.dispatch(
@@ -60,8 +62,11 @@ export const handleRegister = async (
                 website,
             })
         );
-        toast("Registration successful!");
-        window.location.replace("/login");
+
+        toast.success("Registration successful!");
+
+        const navigate = useNavigate();
+        navigate("/login");
     } catch (error) {
         console.log(error);
     }
