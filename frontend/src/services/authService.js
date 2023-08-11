@@ -68,7 +68,7 @@ export const handleRegister = async (
 
         // Check if the email is already registered
         const state = store.getState(); // Get the current state from the Redux store
-        const users = state.auth.users; // Assuming you have a "users" property in your Redux state
+        const users = state.auth.user; // Assuming you have a "users" property in your Redux state
 
         const existingUser = users.find((user) => user.email === email);
         if (existingUser) {
