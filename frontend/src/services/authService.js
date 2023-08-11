@@ -1,11 +1,12 @@
 import { userLogin, userRegister } from "../redux/features/auth/authActions";
 import {store} from "../redux/store";
+import {toast} from "react-toastify";
 
 export const handleLogin = (e, email, password, role) => {
     e.preventDefault();
     try {
         if (!role || !email || !password) {
-            return alert("Please Pride All Fields");
+            return toast("Please Pride All Fields");
         }
         store.dispatch(userLogin({ email, password, role }));
     } catch (error) {
@@ -27,6 +28,9 @@ export const handleRegister = (
 ) => {
     e.preventDefault();
     try {
+        if (!role || !email || !password || !phone || !address ||!website || (!name && !organisationName && !hospitalName)) {
+            return toast("Please Pride All Fields");
+        }
         store.dispatch(
             userRegister({
                 name,

@@ -42,7 +42,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                             type="radio"
                             className="form-check-input"
                             name="role"
-                            id="donarRadio"
+                            id="donorRadio"
                             value={"donor"}
                             onChange={(e) => setRole(e.target.value)}
                             defaultChecked
@@ -101,7 +101,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"email"}
                                         labelFor={"forEmail"}
-                                        inputType={"email"}
+                                        inputTape={"email"}
                                         name={"email"}
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -109,7 +109,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"Password"}
                                         labelFor={"forPassword"}
-                                        inputType={"password"}
+                                        inputTape={"password"}
                                         name={"password"}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
@@ -124,7 +124,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                         <InputType
                                             labelText={"Name"}
                                             labelFor={"forName"}
-                                            inputType={"text"}
+                                            inputTape={"text"}
                                             name={"name"}
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
@@ -133,8 +133,8 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     {role === "organisation" && (
                                         <InputType
                                             labelText={"Organisation Name"}
-                                            labelFor={"fororganisationName"}
-                                            inputType={"text"}
+                                            labelFor={"forOrganisationName"}
+                                            inputTape={"text"}
                                             name={"organisationName"}
                                             value={organisationName}
                                             onChange={(e) => setOrganisationName(e.target.value)}
@@ -144,7 +144,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                         <InputType
                                             labelText={"Hospital Name"}
                                             labelFor={"forHospitalName"}
-                                            inputType={"text"}
+                                            inputTape={"text"}
                                             name={"hospitalName"}
                                             value={hospitalName}
                                             onChange={(e) => setHospitalName(e.target.value)}
@@ -154,7 +154,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"email"}
                                         labelFor={"forEmail"}
-                                        inputType={"email"}
+                                        inputTape={"email"}
                                         name={"email"}
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -162,7 +162,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"Password"}
                                         labelFor={"forPassword"}
-                                        inputType={"password"}
+                                        inputTape={"password"}
                                         name={"password"}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
@@ -170,7 +170,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"website"}
                                         labelFor={"forWebsite"}
-                                        inputType={"text"}
+                                        inputTape={"text"}
                                         name={"website"}
                                         value={website}
                                         onChange={(e) => setWebsite(e.target.value)}
@@ -178,7 +178,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"Address"}
                                         labelFor={"forAddress"}
-                                        inputType={"text"}
+                                        inputTape={"text"}
                                         name={"address"}
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
@@ -186,7 +186,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                                     <InputType
                                         labelText={"Phone"}
                                         labelFor={"forPhone"}
-                                        inputType={"text"}
+                                        inputTape={"text"}
                                         name={"phone"}
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}

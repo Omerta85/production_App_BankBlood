@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import {InputType} from "../Form/InputType";
 import API from "./../../../services/API";
+import {toast} from "react-toastify";
 
 const Modal = () => {
     const [inventoryType, setInventoryType] = useState("in");
@@ -13,7 +14,7 @@ const Modal = () => {
     const handleModalSubmit = async () => {
         try {
             if (!bloodGroup || !quantity) {
-                return alert("Please Provide All Fields");
+                return toast("Please Provide All Fields");
             }
             const { data } = await API.post("/inventory/create-inventory", {
                 email,
@@ -23,7 +24,7 @@ const Modal = () => {
                 quantity,
             });
             if (data?.success) {
-                alert("New Record Created");
+                toast("New Record Created");
                 window.location.reload();
             }
         } catch (error) {
