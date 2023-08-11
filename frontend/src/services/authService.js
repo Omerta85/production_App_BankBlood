@@ -5,10 +5,10 @@ import {toast} from "react-toastify";
 export const handleLogin = (e, email, password, role) => {
     e.preventDefault();
     try {
-        if (!role || !email || !password) {
+        if ( !email || !password) {
             return toast("Please Pride All Fields");
         }
-        store.dispatch(userLogin({ email, password, role }));
+        store.dispatch(userLogin({ email, password }));
     } catch (error) {
         console.log(error);
     }

@@ -18,7 +18,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             <form
                 onSubmit={(e) => {
                     if (formType === "login")
-                        return handleLogin(e, email, password, role);
+                        return handleLogin(e, email, password);
                     else if (formType === "register")
                         return handleRegister(
                             e,
