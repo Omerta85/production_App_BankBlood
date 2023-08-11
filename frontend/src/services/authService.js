@@ -39,7 +39,7 @@ export const handleRegister = async (
 
         if (users === null) {
             // Handle the case where user data is not loaded yet
-            return toast("User data is still loading. Please try again.");
+            return toast("This email is already registered");
         }
 
         const existingUser = users.find((user) => user.email === email);
