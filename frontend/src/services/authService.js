@@ -8,7 +8,7 @@ export const handleLogin = (e, email, password, role) => {
         if ( !role || !email || !password) {
             return toast("Please Pride All Fields");
         }
-        store.dispatch(userLogin({ email, password }));
+        store.dispatch(userLogin({ email, password,role }));
     } catch (error) {
         console.log(error);
     }
