@@ -1,4 +1,4 @@
-import { userLogin, userRegister } from "../redux/features/auth/authActions";
+import {getCurrentUser, userLogin, userRegister} from "../redux/features/auth/authActions";
 import {store} from "../redux/store";
 import {toast} from "react-toastify";
 
@@ -31,6 +31,8 @@ export const handleRegister = async (
         if (!role || !email || !password || !phone || !address ||!website || (!name && !organisationName && !hospitalName)) {
             return toast("Please Pride All Fields");
         }
+        // Dispatch getCurrentUser action to ensure user data is loaded
+        await store.dispatch(getCurrentUser());
         // Check if the email is already registered
         const state = store.getState(); // Get the current state from the Redux store
         const users = state.auth.user; // Assuming you have a "users" property in your Redux state
