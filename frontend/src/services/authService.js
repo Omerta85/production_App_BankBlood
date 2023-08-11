@@ -35,7 +35,7 @@ export const handleRegister = async (
         await store.dispatch(getCurrentUser());
         // Check if the email is already registered
         const state = store.getState(); // Get the current state from the Redux store
-        const users = state.auth.user; // Assuming you have a "users" property in your Redux state
+        const users = state.auth; // Assuming you have a "users" property in your Redux state
 
         if (users === null) {
             // Handle the case where user data is not loaded yet
