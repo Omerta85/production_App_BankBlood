@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../../../services/API";
 import {toast} from "react-toastify";
-import {useNavigate} from "react-router-dom";
+
 
 export const userLogin = createAsyncThunk(
     "auth/login",
@@ -12,9 +12,7 @@ export const userLogin = createAsyncThunk(
             if (data.success) {
                 toast.success(data.message);
                 localStorage.setItem("token", data.token);
-                //window.location.replace("/");
-                const navigate = useNavigate(); // Отримуємо функцію navigate
-                navigate("/");
+                window.location.replace("/");
             }
             return data;
         } catch (error) {
@@ -59,10 +57,7 @@ export const userRegister = createAsyncThunk(
             if (data?.success) {
                 // alert("User Registered Successfully");
                  toast.success("User Registered Successfully");
-                 //window.location.replace("/login");
-                const navigate = useNavigate(); // Отримуємо функцію navigate
-                navigate("/login");
-
+                 window.location.replace("/login");
             }
         } catch (error) {
             console.log(error);

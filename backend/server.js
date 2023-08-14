@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const colors = require("colors");
+//const colors = require("colors");
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
@@ -8,7 +8,7 @@ const connectDB = require("./config/db");
 dotenv.config();
 
 //mongodb connection
-connectDB();
+await connectDB();
 
 //rest object
 const app = express();
