@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
         if (user?.role !== "admin") {
             return res.status(401).send({
                 success: false,
-                message: "AUth Filed",
+                message: "Auth Filed",
             });
         } else {
             next();

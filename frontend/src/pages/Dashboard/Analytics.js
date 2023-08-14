@@ -40,7 +40,7 @@ const Analytics = () => {
             const { data } = await API.get("/inventory/get-recent-inventory");
             if (data?.success) {
                 setInventoryData(data?.inventory);
-                console.log(data);
+                //console.log(data);
             }
         } catch (error) {
             console.log(error);

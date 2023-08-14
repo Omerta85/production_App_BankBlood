@@ -10,28 +10,19 @@ const userSchema = new mongoose.Schema(
         name: {
             type: String,
             required: function () {
-                if (this.role === "user" || this.role === "admin") {
-                    return true;
-                }
-                return false;
+                return this.role === "user" || this.role === "admin";
             },
         },
         organisationName: {
             type: String,
             required: function () {
-                if (this.role === "organisation") {
-                    return true;
-                }
-                return false;
+                return this.role === "organisation";
             },
         },
         hospitalName: {
             type: String,
             required: function () {
-                if (this.role === "hospital") {
-                    return true;
-                }
-                return false;
+                return this.role === "hospital";
             },
         },
         email: {

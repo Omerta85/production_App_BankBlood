@@ -1,11 +1,13 @@
 const inventoryModel = require("../models/inventoryModel");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+const { Types } = require("mongoose");
+
 //GET BLOOD DATA
 const bloodGroupDetailsController = async (req, res) => {
     try {
         const bloodGroups = ['I(0+)', 'I(0-)', 'IV(AB+)', 'IV(AB-)', 'II(A+)', 'II(A-)', 'III(B+)','III(B-)'];
         const bloodGroupData = [];
-        const organisation = new mongoose.Types.ObjectId(req.body.userId);
+        const organisation = new Types.ObjectId(req.body.userId);
         //get single blood group
         await Promise.all(
             bloodGroups.map(async (bloodGroup) => {
