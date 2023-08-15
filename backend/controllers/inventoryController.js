@@ -63,9 +63,9 @@ const createInventoryController = async (req, res) => {
                     message: `Only ${availableQuantityOfBloodGroup}ML of ${requestedBloodGroup.toUpperCase()} is available`,
                 });
             }
-            req.body.hospital = user._id;
+            req.body.hospital = user?._id;
         } else {
-            req.body.donor = user._id;
+            req.body.donor = user?._id;
         }
 
         //save record

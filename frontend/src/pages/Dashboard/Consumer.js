@@ -13,11 +13,11 @@ const Consumer = () => {
             const { data } = await API.post("/inventory/get-inventory-hospital", {
                 filters: {
                     inventoryType: "out",
-                    hospital: user._id,
+                    hospital: user?._id,
                 },
             });
             if (data.success) {
-                setData(data.inventory);
+                setData(data?.inventory);
                 console.log(data);
             }
         } catch (error) {
