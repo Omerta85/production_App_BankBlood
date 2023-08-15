@@ -13,11 +13,11 @@ const Donation = () => {
             const { data } = await API.post("/inventory/get-inventory-hospital", {
                 filters: {
                     inventoryType: "in",
-                    donor: user?._id,
+                    donor: user._id,
                 },
             });
-            if (data?.success) {
-                setData(data?.inventory);
+            if (data.success) {
+                setData(data.inventory);
                 console.log(data);
             }
         } catch (error) {
