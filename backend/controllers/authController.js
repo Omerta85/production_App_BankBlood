@@ -7,7 +7,7 @@ const registerController = async (req, res) => {
         const exisitingUser = await userModel.findOne({ email: req.body.email });
         //validation
         if (exisitingUser) {
-            return res.status(200).send({
+            return res.status(400).send({
                 success: false,
                 message: "User Already exists",
             });

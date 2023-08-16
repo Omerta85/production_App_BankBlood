@@ -1,5 +1,5 @@
 import React from "react";
-import { userMenu } from "./Menu/userMenu";
+//import { userMenu } from "./Menu/userMenu";
 import { useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../../../styles/Layout.css";
@@ -28,7 +28,7 @@ const Sidebar = () => {
                                 }`}
                             >
                                 <i className="fa-solid fa-hand-holding-medical"></i>
-                                <Link to="/donar">Donor</Link>
+                                <Link to="/donor">Donor</Link>
                             </div>
                             <div
                                 className={`menu-item ${
@@ -48,7 +48,7 @@ const Sidebar = () => {
                                 }`}
                             >
                                 <i className="fa-solid fa-warehouse"></i>
-                                <Link to="/donar-list">Donor List</Link>
+                                <Link to="/donor-list">Donor List</Link>
                             </div>
                             <div
                                 className={`menu-item ${

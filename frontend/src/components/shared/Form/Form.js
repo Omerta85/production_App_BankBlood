@@ -219,4 +219,3 @@ const Form = ({ formType, submitBtn, formTitle }) => {
 };
 
 export {Form};
-

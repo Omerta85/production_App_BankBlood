@@ -44,6 +44,7 @@ const authSlice = createSlice({
             state.loading = false;
             state.error = payload;
         });
+
         // CURRENT user
         builder.addCase(getCurrentUser.pending, (state) => {
             state.loading = true;

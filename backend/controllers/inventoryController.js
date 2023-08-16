@@ -1,5 +1,4 @@
-// const mongoose = require("mongoose");
-const {Types} = require("mongoose");
+const mongoose = require("mongoose");
 const inventoryModel = require("../models/inventoryModel");
 const userModel = require("../models/userModel");
 
@@ -10,13 +9,13 @@ const createInventoryController = async (req, res) => {
         //validation
         const user = await userModel.findOne({ email });
         if (!user) {
-             new Error("User Not Found");
+            new Error("User Not Found");
         }
 
         if (req.body.inventoryType === "out") {
             const requestedBloodGroup = req.body.bloodGroup;
             const requestedQuantityOfBlood = req.body.quantity;
-            const organisation = new Types.ObjectId(req.body.userId);
+            const organisation = new mongoose.Types.ObjectId(req.body.userId);
             //calculate Blood Quantity
             const totalInOfRequestedBlood = await inventoryModel.aggregate([
                 {

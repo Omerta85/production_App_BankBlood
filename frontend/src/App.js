@@ -30,7 +30,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/donar-list"
+                    path="/donor-list"
                     element={
                         <ProtectedRoute>
                             <DonorList />
@@ -95,7 +95,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/donar"
+                    path="/donor"
                     element={
                         <ProtectedRoute>
                             <Donor />

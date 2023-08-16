@@ -26,7 +26,7 @@ const OrgList = () => {
     const handelDelete = async (id) => {
         try {
             let answer = window.prompt(
-                "Are You SUre Want To Delete This Organisation",
+                "Are You Sure Want To Delete This Organisation",
                 "Sure"
             );
             if (!answer) return;
