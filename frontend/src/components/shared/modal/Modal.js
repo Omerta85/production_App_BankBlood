@@ -306,19 +306,24 @@ const Modal = () => {
             )}
 
             {/* Виведення записів */}
-            <tbody>
-            {records.map((record, index) => (
-                <tr key={index}>
-                    <td>{record.bloodGroup}</td>
-                    <td>{record.inventoryType}</td>
-                    <td>{record.quantity} (ML)</td>
-                    <td>{record.email}</td>
-                    <td>
-                        {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
-                    </td>
-                </tr>
-            ))}
-            </tbody>
+            <div>
+            <h4 className="ms-4"> New Inventory Records</h4>
+                <table className="table ">
+                    <tbody>
+                    {records.map((record, index) => (
+                        <tr key={index}>
+                            <td>{record.bloodGroup}</td>
+                            <td>{record.inventoryType}</td>
+                            <td>{record.quantity} (ML)</td>
+                            <td>{record.email}</td>
+                            <td>
+                                {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
+                            </td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };
