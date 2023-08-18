@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import {InputType} from "../Form/InputType";
 import API from "./../../../services/API";
 import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 const Modal = () => {
     const [inventoryType, setInventoryType] = useState("in");
@@ -10,6 +11,7 @@ const Modal = () => {
     const [quantity, setQuantity] = useState(0);
     const [email, setEmail] = useState("");
     const { user } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
     // handle modal data
     const handleModalSubmit = async () => {
         try {
@@ -25,12 +27,14 @@ const Modal = () => {
             });
             if (data?.success) {
                 toast("New Record Created");
-                window.location.reload();
+                //window.location.reload();
+                navigate("/analytics");
             }
         } catch (error) {
             alert(error.response.data.message);
             // console.log(error);
-            window.location.reload();
+            //window.location.reload();
+            navigate("/analytics");
         }
     };
 
