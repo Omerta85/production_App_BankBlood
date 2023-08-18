@@ -37,6 +37,7 @@ const HomePage = () => {
             ) : (
                 <>
                     <div className="container">
+                        <h1 className="text-center">New Inventory Records</h1>
                         <h4
                             className="ms-4"
                             data-bs-toggle="modal"
@@ -47,6 +48,7 @@ const HomePage = () => {
                             <Modal />
                         </h4>
                         <table className="table ">
+                            <caption>All Inventory Records</caption>
                             <thead>
                             <tr>
                                 <th scope="col">Blood Group</th>

@@ -307,7 +307,6 @@ const Modal = () => {
 
             {/* Виведення записів */}
                 <table className="table">
-                    <caption>New Inventory Records</caption>
                     <tbody>
                     {records.map((record, index) => (
                         <tr key={index}>
