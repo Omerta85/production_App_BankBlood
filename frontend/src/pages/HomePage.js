@@ -37,7 +37,7 @@ const HomePage = () => {
             ) : (
                 <>
                     <div className="container">
-                        <h1 className="text-center">New Inventory Records</h1>
+                        <h4 className="ms-4">New Blood Records</h4>
                         <h4
                             className="ms-4"
                             data-bs-toggle="modal"
@@ -47,8 +47,8 @@ const HomePage = () => {
                             <i className="fa-solid fa-plus text-success py-4"></i>
                             <Modal />
                         </h4>
+                        <h1 className="text-center">All Blood Records</h1>
                         <table className="table ">
-                            <caption>All Inventory Records</caption>
                             <thead>
                             <tr>
                                 <th scope="col">Blood Group</th>
