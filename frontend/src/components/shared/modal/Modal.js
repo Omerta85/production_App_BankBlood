@@ -307,8 +307,17 @@ const Modal = () => {
 
             {/* Виведення записів */}
             <div>
-            <h4 className="ms-4"> New Inventory Records</h4>
-                <table className="table ">
+                <h4 className="ms-4">New Inventory Records</h4>
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Blood Group</th>
+                        <th scope="col">Inventory Type</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Donor Email</th>
+                        <th scope="col">Time & Date</th>
+                    </tr>
+                    </thead>
                     <tbody>
                     {records.map((record, index) => (
                         <tr key={index}>
@@ -324,6 +333,7 @@ const Modal = () => {
                     </tbody>
                 </table>
             </div>
+
         </>
     );
 };
