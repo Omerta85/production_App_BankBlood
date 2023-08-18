@@ -306,16 +306,10 @@ const Modal = () => {
             )}
 
             {/* Виведення записів */}
-            <div>
-                <h4 className="ms-4">New Inventory Records</h4>
                 <table className="table">
                     <thead>
                     <tr>
-                        <th scope="col">Blood Group</th>
-                        <th scope="col">Inventory Type</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Donor Email</th>
-                        <th scope="col">Time & Date</th>
+                        <th scope="col">New Inventory Records</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -332,7 +326,7 @@ const Modal = () => {
                     ))}
                     </tbody>
                 </table>
-            </div>
+
 
         </>
     );
