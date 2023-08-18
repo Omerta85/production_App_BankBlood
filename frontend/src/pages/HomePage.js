@@ -44,7 +44,7 @@ const HomePage = () => {
                             style={{ cursor: "pointer" }}
                         >
                             <i className="fa-solid fa-plus text-success py-4"></i>
-                            Add Inventory
+                            <Modal />
                         </h4>
                         <table className="table ">
                             <thead>
@@ -71,7 +71,7 @@ const HomePage = () => {
                             </tbody>
                         </table>
 
-                        <Modal />
+
                     </div>
                 </>
             )}

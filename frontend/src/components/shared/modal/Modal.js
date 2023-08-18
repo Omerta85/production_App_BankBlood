@@ -195,7 +195,7 @@ const Modal = () => {
                 className="btn btn-primary"
                 onClick={() => setShowModal(true)}
             >
-                Open Modal
+                Add Inventory
             </button>
 
             {showModal && (
