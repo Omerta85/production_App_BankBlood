@@ -154,6 +154,7 @@ import { useSelector } from "react-redux";
 import { InputType } from "../Form/InputType";
 import API from "./../../../services/API";
 import { toast } from "react-toastify";
+import moment from "moment/moment";
 
 const Modal = () => {
     const [inventoryType, setInventoryType] = useState("in");
@@ -305,14 +306,19 @@ const Modal = () => {
             )}
 
             {/* Виведення записів */}
+            <tbody>
             {records.map((record, index) => (
-                <div key={index}>
-                    <p>Inventory Type: {record.inventoryType}</p>
-                    <p>Blood Group: {record.bloodGroup}</p>
-                    <p>Quantity: {record.quantity}</p>
-                    <p>Email: {record.email}</p>
-                </div>
+                <tr key={index}>
+                    <td>{record.bloodGroup}</td>
+                    <td>{record.inventoryType}</td>
+                    <td>{record.quantity} (ML)</td>
+                    <td>{record.email}</td>
+                    <td>
+                        {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
+                    </td>
+                </tr>
             ))}
+            </tbody>
         </>
     );
 };
