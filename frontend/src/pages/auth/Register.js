@@ -4,13 +4,14 @@ import {useSelector} from "react-redux";
 import registerImage from "../../assets/images/banner2.jpeg"
 import {Form} from "../../components/shared/Form/Form";
 import {Spinner} from "../../components/shared/Spinner";
+import {toast} from "react-toastify";
 
 
 const Register = () =>{
     const{loading,error} = useSelector((state) => state.auth);
     return (
         <>
-            {error && alert(error)}
+            {error && <span>{toast(error)}</span>}
             {loading ? (<Spinner/>) : (
                 <div className="row g-0">
                     <div className="col-md-8 form-banner">
