@@ -11,7 +11,7 @@ const Login = () =>{
     const{loading, error} = useSelector((state) => state.auth)
     return (
         <>
-            {toast(error)}
+            {error && toast(error)}
             {loading ? (
                 <Spinner/>
             ) : (
